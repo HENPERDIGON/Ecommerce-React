@@ -2,14 +2,20 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
 
-const NavBar = () => {
+
+
+
+
+const App = () => {
   return (
     <>
-      <Header />
-      <Main />
+      <Header />     
+      <Main />  
       <Footer />
+      
+
     </>
   );
 };
 
-export default NavBar;
+export default App;

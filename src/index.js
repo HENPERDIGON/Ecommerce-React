@@ -5,7 +5,7 @@ import React from "react"
 import  ReactDOM from "react-dom/client"
 
 
-import NavBar from "./components/NavBar"
+import App from "./components/App"
 
 /* import  "./styles.css" */
 import  "./styles.scss"
@@ -19,4 +19,4 @@ const root = ReactDOM.createRoot (document.getElementById ("root"))
 
 /* ReactDOM.render (<App/>, document.getElementById ("root")) */
 
-root.render (<NavBar/>)
+root.render (<App/>)
