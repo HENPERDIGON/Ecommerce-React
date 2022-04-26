@@ -5,7 +5,7 @@ import ItemListContainer from "./ItemListContainer"
 const Main = () => {
     return(
         <main>
-            <ItemListContainer/>
+            <ItemListContainer greeting = "Bienvenidos a Motoplanet, ¿Que desea?" />
         </main>
         
     )

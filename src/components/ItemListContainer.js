@@ -1,5 +1,5 @@
-const ItemListContainer = (props) => {
-    console.log (props)
+const ItemListContainer = ({greeting}) => {
+    console.log (greeting)
     return(
         <div> ¡Saludos a Todos! </div>
     
