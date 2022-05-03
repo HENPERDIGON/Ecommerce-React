@@ -1,8 +1,9 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
-import ItemCount from './ItemCount'
-
+import ItemListContainer from "./ItemListContainer";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 
 
@@ -14,7 +15,8 @@ const App = () => {
     <>
       <Header />     
       <Main />  
-      <ItemCount/> 
+      <ItemListContainer />
+    <ItemDetailContainer />
       <Footer />
       
 

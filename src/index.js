@@ -9,6 +9,7 @@ import App from "./components/App"
 
 /* import  "./styles.css" */
 import  "./styles.scss"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const root = ReactDOM.createRoot (document.getElementById ("root"))

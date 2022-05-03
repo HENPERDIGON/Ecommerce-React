@@ -21,42 +21,34 @@ const ItemCount = () => {
 
 export default ItemCount */
 
-import { useState , useEffect } from "react"
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
+export default function ItemCount({stock, onAdd}) {
+  const [count, setCount] = useState (0);
 
-
-
-const ItemCount = (props) => {
-
-  const [contador, setContador] = useState(0)
-  const [dark, setDark] = useState(false)
-  
-
-  useEffect(()=>{
-    console.log("Nuevo render")
-    console.log("Hago un pedido a una BD para productos")
-  },[])
-
-
-  const aumentarContador = () => {
-    setContador(contador + 1)
+  function adding () {
+      if (count < stock){
+      setCount(count +1);}
   }
-
-  const toggleDark = () => {
-    setDark(!dark)
+  function subs () {
+      if (count > 0){
+      setCount(count -1)}
   }
-
-  console.log(dark)
-
-
   return (
-    
-    <div>
-      <p>Contador Actual : {contador}</p>
-      <p>Modo dark : {"dark"}</p>
-      <button onClick={aumentarContador}>aumentar</button>
-      <button onClick={toggleDark}>toggle dark</button>
-    </div>
-  )
-}
+    <>
+        <div className='itemConunt'>
+            <p>{count}</p>
+            <div className='addSubs'>
+                <div >
+                    <Button onClick={adding} variant="outline-success">+</Button>
+                </div>
+                <div>
+                    <Button onClick={subs}  variant="outline-danger">-</Button>
+                </div>
+            </div>
+            <Button onClick={() => onAdd(count)} className='onAdd'  variant="primary" size="sm">AGREGAR AL CARRITO</Button>
+            </div>
+        </>
 
-export default ItemCount
+    )
+}
