@@ -1,12 +1,19 @@
-let isOk = true;
-const customFetch = (time, task) => {
-    return new Promise ((resolve, reject) =>{
-        setTimeout(() => {
-            if(isOk) {
-                resolve(task);
-            }else {
-                reject('error')
+
+        import Productos from "./Productos";
+
+        const customFetch = (time) => {
+            return new Promise ((resolve, reject) =>{
+
+
+
+                setTimeout(() => {
+                    if(true) {
+                        resolve(Productos)
+                    }else {
+                        reject("error")
+
             }
+
         }, time)})}
 
-        export default customFetch;
+        export default customFetch; 

@@ -11,17 +11,35 @@ export default  ItemListContainer */
 
 import React, { useEffect, useState } from 'react'
 import customFetch from "../utils/customFetch";
-import Productos from "../utils/Productos.Js";
+
 import ItemList from './ItemList';
+import { useParams } from 'react-router-dom';
+
+
+
+
+
 
 export default function ItemListContainer() {
     const [items, setItems] = useState([]);
 
+    const { categoryid } = useParams();
+
+
+
     useEffect(() => {
-        customFetch(2000, Productos)
-        .then(resultado => setItems(resultado))
+        customFetch(3000)
+        .then(resultado => {
+            if(categoryid){
+                setItems(resultado.filter(i=> i.categoria === categoryid))}
+                else{
+                    setItems(resultado)
+                }
+        })
         .catch(error => console.log(error));
-    }, [items])
+    }, [categoryid])
+
+
 
     return (
         <>

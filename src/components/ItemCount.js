@@ -23,7 +23,11 @@ export default ItemCount */
 
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
-export default function ItemCount({stock, onAdd}) {
+
+
+
+
+export default function ItemCount({stock, addProduct}) {
   const [count, setCount] = useState (0);
 
   function adding () {
@@ -34,6 +38,9 @@ export default function ItemCount({stock, onAdd}) {
       if (count > 0){
       setCount(count -1)}
   }
+  function handleClick () {
+        addProduct(count);
+    }
   return (
     <>
         <div className='itemConunt'>
@@ -46,7 +53,7 @@ export default function ItemCount({stock, onAdd}) {
                     <Button onClick={subs}  variant="outline-danger">-</Button>
                 </div>
             </div>
-            <Button onClick={() => onAdd(count)} className='onAdd'  variant="primary" size="sm">AGREGAR AL CARRITO</Button>
+            <Button onClick={handleClick} className='onAdd'  variant="primary" size="sm">AGREGAR AL CARRITO</Button>
             </div>
         </>
 
