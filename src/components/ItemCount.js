@@ -21,14 +21,17 @@ const ItemCount = () => {
 
 export default ItemCount */
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Button from 'react-bootstrap/Button'
+import { CartContext } from './CartContext'
 
 
 
 
-export default function ItemCount({stock, addProduct}) {
+export default function ItemCount({stock, addProduct, producto}) {
   const [count, setCount] = useState (0);
+  
+  const {addToCart} = useContext(CartContext)
 
   function adding () {
       if (count < stock){
@@ -39,7 +42,8 @@ export default function ItemCount({stock, addProduct}) {
       setCount(count -1)}
   }
   function handleClick () {
-        addProduct(count);
+    addToCart({...producto,count})    
+    addProduct(count);
     }
   return (
     <>

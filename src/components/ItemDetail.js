@@ -20,11 +20,7 @@ function ItemDetail({ productos }) {
               <Card.Title>{productos.nombre}</Card.Title>
               <Card.Text>{productos.descripcion}</Card.Text>
               <Card.Text>$ {productos.precio}</Card.Text>
-              {number === 0 ? (
-                <ItemCount stock={10} addProduct={addProduct} />
-              ) : (
-                <Link to="/carrito">IR AL CARRITO</Link>
-              )}
+              { number === 0 ? <ItemCount stock={10} addProduct={addProduct} producto={productos}/> : <Link to='/carrito'>IR AL CARRITO</Link>}
             </div>
           </Card.ImgOverlay>
         </Card>
